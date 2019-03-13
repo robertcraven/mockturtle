@@ -35,33 +35,33 @@ as in EXAMPLE 5.
 
 This draws a line from the center to 100 units north, s l o w l y.
 
-> % ./mockturtle.py -s 1 -d 100              
->  t: turtle rob  
->  t: move rob 100  
->  t: bye  
-> % 
+    % ./mockturtle.py -s 1 -d 100              
+     t: turtle rob  
+     t: move rob 100  
+     t: bye  
+    % 
 
 ### EXAMPLE 2
 
 Text-based use of the TurtleShell.
 
-> % python3  
-> Python 3.6.7 (default, Oct 22 2018, 11:32:17)   
-> [GCC 8.2.0] on linux  
-> Type "help", "copyright", "credits" or "license" for more information.  
-> &lt;&lt;&lt; import mockturtle as mt  
-> &lt;&lt;&lt; mt.TurtleShell().cmdloop()  
->  t: turtle bill   
->  t: move bill 90  
->     drew from (0.00, 0.00) to (0.00, 90.00)  
->  t: right bill 30  
->  t: move bill 20  
->     drew from (0.00, 90.00) to (10.00, 107.32)  
->  t: status  
->           bill:  (  10.00,  107.32) |  60.00° | DOWN | black  
->  t: bye  
-> &lt;&lt;&lt; quit()  
-> %
+    % python3  
+    Python 3.6.7 (default, Oct 22 2018, 11:32:17)   
+    [GCC 8.2.0] on linux  
+    Type "help", "copyright", "credits" or "license" for more information.  
+    >>> import mockturtle as mt  
+    >>> mt.TurtleShell().cmdloop()  
+     t: turtle bill   
+     t: move bill 90  
+        drew from (0.00, 0.00) to (0.00, 90.00)  
+     t: right bill 30  
+     t: move bill 20  
+        drew from (0.00, 90.00) to (10.00, 107.32)  
+     t: status  
+            bill:  (  10.00,  107.32) |  60.00° | DOWN | black  
+     t: bye  
+    >>> quit()  
+    %
 
 ### EXAMPLE 3
 
