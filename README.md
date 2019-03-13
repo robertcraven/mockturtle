@@ -6,7 +6,7 @@ EMAIL:  robert.craven@gmail.com
 
 ## USAGE
 
-Doing a 'mockturtle.py -h' will show usage.
+Doing a `mockturtle.py -h` will show usage.
 
 ## MODES OF RUNNING
 
@@ -26,7 +26,7 @@ in text mode), then then commands of the turtle graphics language can
 be typed into a command shell (EXAMPLES 1 and 2, below), or can be
 loaded from a file whose name is passed as input (EXAMPLES 3 and 4).
 
-Otherwise, commands are passed using functions within Turtle(),
+Otherwise, commands are passed using functions within the `Turtle` objects,
 as in EXAMPLE 5.
 
 ## EXAMPLES
@@ -43,7 +43,7 @@ This draws a line from the center to 100 units north, s l o w l y.
 
 ### EXAMPLE 2
 
-Text-based use of the TurtleShell.
+Text-based use of the `TurtleShell`.
 
     % python3  
     Python 3.6.7 (default, Oct 22 2018, 11:32:17)   
@@ -67,65 +67,65 @@ Text-based use of the TurtleShell.
 
 This draws a sample file quickly (not instantaneously).
 
- % ./mockturtle.py -s 20 -d 10 -p ../turtle_programs/squares.tt
-  t: bye
- %
+    % ./mockturtle.py -s 20 -d 10 -p ../turtle_programs/squares.tt
+     t: bye
+    %
 
 ### EXAMPLE 4
 
-Show the effects of a 'red square' program, text-based TurtleShell.
+Show the effects of a 'red square' program, text-based `TurtleShell`.
 
- % python3
- Python 3.6.7 (default, Oct 22 2018, 11:32:17) 
- [GCC 8.2.0] on linux
- Type "help", "copyright", "credits" or "license" for more information.
- >>> import mockturtle as mt
- >>> ts = mt.TurtleShell(turtle_program='../turtle_programs/redsquare.tt').cmdloop()
-      drew from (0.00, 0.00) to (0.00, 50.00)
-     drew from (0.00, 50.00) to (-50.00, 50.00)
-     drew from (-50.00, 50.00) to (-50.00, 0.00)
-     drew from (-50.00, 0.00) to (-0.00, 0.00)
-  t: bye
- >>> quit()
- %
+    % python3
+    Python 3.6.7 (default, Oct 22 2018, 11:32:17) 
+    [GCC 8.2.0] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import mockturtle as mt
+    >>> ts = mt.TurtleShell(turtle_program='../turtle_programs/redsquare.tt').cmdloop()
+        drew from (0.00, 0.00) to (0.00, 50.00)
+        drew from (0.00, 50.00) to (-50.00, 50.00)
+        drew from (-50.00, 50.00) to (-50.00, 0.00)
+        drew from (-50.00, 0.00) to (-0.00, 0.00)
+     t: bye
+    >>> quit()
+  %
 
 ### EXAMPLE 5
 
 Text-based turtle drawing without the interpreter.
 
- % python3
- Python 3.6.7 (default, Oct 22 2018, 11:32:17) 
- [GCC 8.2.0] on linux
- Type "help", "copyright", "credits" or "license" for more information.
- >>> import mockturtle as mt
- >>> bill = mt.Turtle()
- >>> bill.left(50)
- >>> bill
- mockturtle.Turtle object: (   0.00,    0.00) | 140.00° | DOWN | black
- >>> bill.move(100)
-     drew from (0.00, 0.00) to (-76.60, 64.28)
- >>> quit()
- %
+    % python3
+    Python 3.6.7 (default, Oct 22 2018, 11:32:17) 
+    [GCC 8.2.0] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import mockturtle as mt
+    >>> bill = mt.Turtle()
+    >>> bill.left(50)
+    >>> bill
+    mockturtle.Turtle object: (   0.00,    0.00) | 140.00° | DOWN | black
+    >>> bill.move(100)
+        drew from (0.00, 0.00) to (-76.60, 64.28)
+    >>> quit()
+    %
 
 ## PROGRAM STRUCTURE
 
-Using tkinter (as tk) for graphics, we open a root window, and for the
-main application subclass tk.Frame (as TurtleApp).  This packs a
+Using `tkinter` (as `tk`) for graphics, we open a root window, and for the
+main application subclass `tk.Frame` (as `TurtleApp`).  This packs a
 canvas, which can be dragged to show what stray turtles are up to.
 The main application then starts a thread in which a sublcass of
-cmd.Cmd (TurtleShell) is used for the interpreter.  The interpreter
+`cmd.Cmd` (`TurtleShell`) is used for the interpreter.  The interpreter
 then (optionally) reads the commands of any input file, and waits for
 further commands at a prompt.
 
-Both cmd.Cmd and tkinter run on a loop, and the interaction of these
+Both `cmd.Cmd` and `tkinter` run on a loop, and the interaction of these
 has presented some complications.  (Especially in shutting down)  The
 main tk loop runs in the main thread (as is strongly recommended).
-The cmd.Cmd loop runs in a secondary thread.
+The `cmd.Cmd` loop runs in a secondary thread.
 
-Multiple turtles can be created, each an instance of a Turtle class.
+Multiple turtles can be created, each an instance of the `Turtle` class.
 The speed at which they all draw can be controlled by command-line
 arguments; the idea and the form of the relevant mathematics has been
-taken from the python standard library 'turtle' module.  Animation is
+taken from the python standard library `turtle` module.  Animation is
 simulated by drawing lines in segments and delaying between each
 segment.  The number of segments is controlled indirectly by the
 'speed' command-line argument; the delay is controlled directly by
@@ -136,14 +136,14 @@ turtle  itself is drawn on the canvas (only the lines appear).
 
 ## MAIN CLASSES AND FUNCTIONS
 
-  class TurtleApp(tk.Frame)
+  `class TurtleApp(tk.Frame)`
     - Main tk object for controlling the interpreter and graphics
 
-  class TurtleShell(cmd.Cmd)
+  `class TurtleShell(cmd.Cmd)`
     - Main object for controlling the interpreter and parsing
       commands.
 
-  class Turtle:
+  `class Turtle`:
     - An instance for each turtle created, storing its location,
       orientation, and so on.
 
