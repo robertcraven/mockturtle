@@ -3,9 +3,6 @@
 
 """Interpreter for a subset of the turtle graphics language.
 
-AUTHOR: Robert Craven
-EMAIL:  robert.craven@gmail.com
-
 ################ USAGE
 
 Doing a 'mockturtle.py -h' will get you:
