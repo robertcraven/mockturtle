@@ -13,21 +13,24 @@ Doing a `mockturtle.py -h` will show usage.
 Three modes of running are supported.
 
  - The principal way is by executing this script: this shows a gui.
-   See [Example 1](###example1) and [Example 3](###example3), below.
+   See [Example 1](###example-1) and [Example 3](###example-3), below.
  - The first text-based method is by running the TurtleShell after importing
-   this file as a module.  See EXAMPLE 2 and EXAMPLE 4.
+   this file as a module.  See [Example 2](###example-2) and
+   [Example 4](###example-4).
  - Alternatively, one can import the module and create Turtle objects,
-   running their functions directly.  See EXAMPLE 5.
+   running their functions directly.  See [Example 5](###example-5).
 
 ## Forms of input
 
-If we run a turtle shell (whether within an associated TurtleApp, or
+If we run a turtle shell (whether within an associated `TurtleApp`, or
 in text mode), then then commands of the turtle graphics language can
-be typed into a command shell (EXAMPLES 1 and 2, below), or can be
-loaded from a file whose name is passed as input (EXAMPLES 3 and 4).
+be typed into a command shell ([Example 1](###example-1) and
+[Example 2](###example-2), below), or can be loaded from a file whose
+name is passed as input ([Example 3](###example-3) and
+[Example 4](###example-4)).
 
 Otherwise, commands are passed using functions within the `Turtle` objects,
-as in EXAMPLE 5.
+as in [Example 5](###example-5).
 
 ## Examples
 
@@ -41,7 +44,7 @@ This draws a line from the center to 100 units north, s l o w l y.
      t: bye  
     % 
 
-### EXAMPLE 2
+### Example 2
 
 Text-based use of the `TurtleShell`.
 
@@ -63,7 +66,7 @@ Text-based use of the `TurtleShell`.
     >>> quit()  
     %
 
-### EXAMPLE 3
+### Example 3
 
 This draws a sample file quickly (not instantaneously).
 
@@ -71,7 +74,7 @@ This draws a sample file quickly (not instantaneously).
      t: bye
     %
 
-### EXAMPLE 4
+### Example 4
 
 Show the effects of a 'red square' program, text-based `TurtleShell`.
 
@@ -89,7 +92,7 @@ Show the effects of a 'red square' program, text-based `TurtleShell`.
     >>> quit()
     %
 
-### EXAMPLE 5
+### Example 5
 
 Text-based turtle drawing without the interpreter.
 
@@ -107,7 +110,7 @@ Text-based turtle drawing without the interpreter.
     >>> quit()
     %
 
-## PROGRAM STRUCTURE
+## Program structure
 
 Using `tkinter` (as `tk`) for graphics, we open a root window, and for the
 main application subclass `tk.Frame` (as `TurtleApp`).  This packs a
@@ -134,23 +137,23 @@ its command-line argument.
 Turtles themselves do not do their actions concurrently.  And no
 turtle  itself is drawn on the canvas (only the lines appear).
 
-## MAIN CLASSES AND FUNCTIONS
+## Main classes and functions
 
-  `class TurtleApp(tk.Frame)`
-    - Main tk object for controlling the interpreter and graphics
+  - `class TurtleApp(tk.Frame)`:  
+    Main `tk` object for controlling the interpreter and graphics
 
-  `class TurtleShell(cmd.Cmd)`
-    - Main object for controlling the interpreter and parsing
-      commands.
+  - `class TurtleShell(cmd.Cmd)`:  
+    Main object for controlling the interpreter and parsing
+    commands.
 
-  `class Turtle`:
-    - An instance for each turtle created, storing its location,
-      orientation, and so on.
+  - `class Turtle`:  
+    An instance for each turtle created, storing its location,
+    orientation, and so on.
 
-  def command_line_args():
-    - Get command-line arguments using argparse
+  - `def command_line_args()`:  
+    Get command-line arguments using `argparse`
 
-## SHUTTING DOWN
+## Shutting down
 
 Behaviour when shutting the thing down has involved some compromise.
 (Partly because of 'threading', partly because of issues with the
@@ -161,22 +164,23 @@ If the prompt is waiting for a command, then just write 'bye'.
 If the application is running a program passed from file, then either
 close the window or CTRL-C in the terminal should work.
 
-## SUBSET OF TURTLE LANGUAGE
+## Subset of the turtle language
 
 We accept the following language:
 
-  turtle name   - create a new turtle identified by the given name
-  move name x   - moves the named turtle forward by x units
-  left name x   - rotate the turtle anticlockwise by x degrees
-  right name x  - rotate the turtle clockwise by x degrees
-  pen name up   - lift the pen off the 'paper'
-  pen name down - put the pen down so subsequent moves draw on screen
-  colour name c - set the drawing colour of the turtle appropriately
+> `turtle name`  
+> create a new turtle identified by the given name
+>  `move name x`   - moves the named turtle forward by x units
+>  `left name x`   - rotate the turtle anticlockwise by x degrees
+>  `right name x`  - rotate the turtle clockwise by x degrees
+>  `pen name up`   - lift the pen off the 'paper'
+>  `pen name down` - put the pen down so subsequent moves draw on screen
+>  `colour name c` - set the drawing colour of the turtle appropriately
 
 In addition:
 
-  bye           - closes the application
-  status        - prints the current states of all the terminals
+>  `bye`           - closes the application
+>  `status`        - prints the current states of all the terminals
 
 where:
 
