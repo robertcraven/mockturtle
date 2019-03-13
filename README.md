@@ -168,28 +168,36 @@ close the window or CTRL-C in the terminal should work.
 
 We accept the following language:
 
-> `turtle name`  
-> create a new turtle identified by the given name
->  `move name x`   - moves the named turtle forward by x units
->  `left name x`   - rotate the turtle anticlockwise by x degrees
->  `right name x`  - rotate the turtle clockwise by x degrees
->  `pen name up`   - lift the pen off the 'paper'
->  `pen name down` - put the pen down so subsequent moves draw on screen
->  `colour name c` - set the drawing colour of the turtle appropriately
+ - `turtle name`  
+   create a new turtle identified by the given name
+ - `move name x`  
+   moves the named turtle forward by x units
+ - `left name x`  
+   rotate the turtle anticlockwise by x degrees
+ - `right name x`  
+   rotate the turtle clockwise by x degrees
+ - `pen name up`  
+   lift the pen off the 'paper'
+ - `pen name down`  
+   put the pen down so subsequent moves draw on screen
+ - `colour name c`  
+   set the drawing colour of the turtle appropriately
 
 In addition:
 
->  `bye`           - closes the application
->  `status`        - prints the current states of all the terminals
+ - `bye`  
+   closes the application
+ - `status`  
+   prints the current states of all the terminals
 
 where:
 
-  x, for 'move', must be castable to a float (so it can be negative or 0)
-  x, for 'left' and 'right', must be castable to a float in [0,360)
-  c - must be one of ['azure', 'beige', 'black', 'blue', 'brown',
+  - x, for `move`, must be castable to a `float` (so it can be negative or 0)
+  - x, for `left` and `right`, must be castable to a `float` in [0,360)
+  - c must be one of `['azure', 'beige', 'black', 'blue', 'brown',
                       'chartreuse', 'chocolate', 'coral', 'cyan',
                       'firebrick', 'gainsboro', 'gold', 'gray','green',
                       'indigo', 'lavender', 'lime', 'magenta',
                       'maroon', 'olive', 'orange', 'pink', 'plum',
                       'purple', 'red', 'salmon', 'tan', 'thistle',
-                      'tomato', 'violet', 'white', 'yellow']
+                      'tomato', 'violet', 'white', 'yellow']`
