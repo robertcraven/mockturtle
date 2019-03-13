@@ -156,13 +156,13 @@ turtle  itself is drawn on the canvas (only the lines appear).
 ## Shutting down
 
 Behaviour when shutting the thing down has involved some compromise.
-(Partly because of 'threading', partly because of issues with the
-interaction of cmd.Cmd.cmdloop() and tk.mainloop(), I think.)  
+(Partly because of `threading`, partly because of issues with the
+interaction of `cmd.Cmd.cmdloop()` and `tk.mainloop()`, I think.)  
 
-If the prompt is waiting for a command, then just write 'bye'.
-(Shutting the window, of CTRL-C, etc., will not work as they ought.)
+If the prompt is waiting for a command, then just write `bye`.
+(Shutting the window, of `CTRL-C`, etc., will not work as they ought.)
 If the application is running a program passed from file, then either
-close the window or CTRL-C in the terminal should work.
+close the window or `CTRL-C` in the terminal should work.
 
 ## Subset of the turtle language
 
