@@ -1,30 +1,14 @@
 # mockturtle
 Simple python interpreter for a subset of the turtle graphics language.
 
-
-AUTHOR: Robert Craven
+AUTHOR: Robert Craven  
 EMAIL:  robert.craven@gmail.com
 
-# USAGE
+## USAGE
 
-Doing a 'mockturtle.py -h' will get you:
+Doing a 'mockturtle.py -h' will show usage.
 
-  usage: turtle graphics interpreter [-h] [-x WX] [-y WY]
-                                     [-p TURTLE_PROGRAM] [-s {0..25}]
-                                     [-d DELAY]
-
-  optional arguments:
-    -h, --help            show this help message and exit
-    -x WX, --wx WX        width of window
-    -y WY, --wy WY        height of window
-    -p TURTLE_PROGRAM, --turtle_program TURTLE_PROGRAM
-                          filename of turtle program to execute
-    -s {0..25}, --speed {0..25}
-                          speed of turtles
-    -d DELAY, --delay DELAY
-                          delay (ms) between drawing line segments
-
-# MODES OF RUNNING
+## MODES OF RUNNING
 
 Three modes of running are supported.
 
@@ -35,7 +19,7 @@ Three modes of running are supported.
  - Alternatively, one can import the module and create Turtle objects,
    running their functions directly.  See EXAMPLE 5.
 
-# FORMS OF INPUT
+## FORMS OF INPUT
 
 If we run a turtle shell (whether within an associated TurtleApp, or
 in text mode), then then commands of the turtle graphics language can
@@ -45,19 +29,19 @@ loaded from a file whose name is passed as input (EXAMPLES 3 and 4).
 Otherwise, commands are passed using functions within Turtle(),
 as in EXAMPLE 5.
 
-# EXAMPLES
+## EXAMPLES
 
-## EXAMPLE 1
+### EXAMPLE 1
 
 This draws a line from the center to 100 units north, s l o w l y.
 
- % ./mockturtle.py -s 1 -d 100              
-  t: turtle rob
-  t: move rob 100
-  t: bye
- % 
+> % ./mockturtle.py -s 1 -d 100              
+>  t: turtle rob
+>  t: move rob 100
+>  t: bye
+> % 
 
-## EXAMPLE 2
+### EXAMPLE 2
 
 Text-based use of the TurtleShell.
 
@@ -79,7 +63,7 @@ Text-based use of the TurtleShell.
  >>> quit()
  %
 
-## EXAMPLE 3
+### EXAMPLE 3
 
 This draws a sample file quickly (not instantaneously).
 
@@ -87,7 +71,7 @@ This draws a sample file quickly (not instantaneously).
   t: bye
  %
 
-## EXAMPLE 4
+### EXAMPLE 4
 
 Show the effects of a 'red square' program, text-based TurtleShell.
 
@@ -105,7 +89,7 @@ Show the effects of a 'red square' program, text-based TurtleShell.
  >>> quit()
  %
 
-## EXAMPLE 5
+### EXAMPLE 5
 
 Text-based turtle drawing without the interpreter.
 
@@ -123,7 +107,7 @@ Text-based turtle drawing without the interpreter.
  >>> quit()
  %
 
-# PROGRAM STRUCTURE
+## PROGRAM STRUCTURE
 
 Using tkinter (as tk) for graphics, we open a root window, and for the
 main application subclass tk.Frame (as TurtleApp).  This packs a
@@ -150,7 +134,7 @@ its command-line argument.
 Turtles themselves do not do their actions concurrently.  And no
 turtle  itself is drawn on the canvas (only the lines appear).
 
-# MAIN CLASSES AND FUNCTIONS
+## MAIN CLASSES AND FUNCTIONS
 
   class TurtleApp(tk.Frame)
     - Main tk object for controlling the interpreter and graphics
@@ -166,7 +150,7 @@ turtle  itself is drawn on the canvas (only the lines appear).
   def command_line_args():
     - Get command-line arguments using argparse
 
-# SHUTTING DOWN
+## SHUTTING DOWN
 
 Behaviour when shutting the thing down has involved some compromise.
 (Partly because of 'threading', partly because of issues with the
@@ -177,7 +161,7 @@ If the prompt is waiting for a command, then just write 'bye'.
 If the application is running a program passed from file, then either
 close the window or CTRL-C in the terminal should work.
 
-# SUBSET OF TURTLE LANGUAGE
+## SUBSET OF TURTLE LANGUAGE
 
 We accept the following language:
 
