@@ -3,8 +3,6 @@
 Simple python interpreter for a subset of the turtle graphics
 language.
 
-Robert Craven, robert.craven@gmail.com
-
 ## Usage
 
 Doing a `mockturtle.py -h` will show usage.
@@ -135,13 +133,14 @@ main tk loop runs in the main thread (as is strongly recommended).
 The `cmd.Cmd` loop runs in a secondary thread.
 
 Multiple turtles can be created, each an instance of the `Turtle` class.
-The speed at which they all draw can be controlled by command-line
-arguments; the idea and the form of the relevant mathematics has been
-taken from the python standard library `turtle` module.  Animation is
-simulated by drawing lines in segments and delaying between each
+Animation is simulated by drawing lines in segments and delaying between each
 segment.  The number of segments is controlled indirectly by the
-'speed' command-line argument; the delay is controlled directly by
-its command-line argument.
+'speed' command-line argument.  This should be an integer between 0 and
+25 inclusive: 1 is slowest, 25 is fastest but still animated, and 0 is
+instantaneous.  The delay between drawing segments is controlled directly
+by the 'delay' command-line argument.  (The idea and the form of the
+relevant mathematics here has been taken from the python standard
+library `turtle` module, with some modifications of parameters.)
 
 Turtles themselves do not do their actions concurrently.  And no
 turtle  itself is drawn on the canvas (only the lines appear).
