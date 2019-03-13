@@ -169,7 +169,8 @@ Behaviour when shutting the thing down has involved some compromise.
 interaction of `cmd.Cmd.cmdloop()` and `tk.mainloop()`, I think.)  
 
 If the prompt is waiting for a command, then just write `bye`.
-(Shutting the window, of `CTRL-C`, etc., will not work as they ought.)
+(Shutting the window, of `CTRL-C`, etc., will not work as they ought; though
+`CTRL-D` does.)
 If the application is running a program passed from file, then either
 close the window or `CTRL-C` in the terminal should work.
 
