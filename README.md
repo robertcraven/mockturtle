@@ -49,8 +49,8 @@ Text-based use of the TurtleShell.
 > Python 3.6.7 (default, Oct 22 2018, 11:32:17)   
 > [GCC 8.2.0] on linux  
 > Type "help", "copyright", "credits" or "license" for more information.  
-> '>>>' import mockturtle as mt  
->  '>>>' mt.TurtleShell().cmdloop()  
+> &lt;&lt;&lt; import mockturtle as mt  
+> &lt;&lt;&lt; mt.TurtleShell().cmdloop()  
 >  t: turtle bill   
 >  t: move bill 90  
 >     drew from (0.00, 0.00) to (0.00, 90.00)  
@@ -60,7 +60,7 @@ Text-based use of the TurtleShell.
 >  t: status  
 >           bill:  (  10.00,  107.32) |  60.00° | DOWN | black  
 >  t: bye  
-> '>>>'' quit()  
+> &lt;&lt;&lt; quit()  
 > %
 
 ### EXAMPLE 3
