@@ -13,24 +13,24 @@ Doing a `mockturtle.py -h` will show usage.
 Three modes of running are supported.
 
  - The principal way is by executing this script: this shows a gui.
-   See [Example 1](###example-1) and [Example 3](###example-3), below.
+   See [Example 1](#example-1) and [Example 3](#example-3), below.
  - The first text-based method is by running the TurtleShell after importing
-   this file as a module.  See [Example 2](###example-2) and
-   [Example 4](###example-4).
+   this file as a module.  See [Example 2](#example-2) and
+   [Example 4](#example-4).
  - Alternatively, one can import the module and create Turtle objects,
-   running their functions directly.  See [Example 5](###example-5).
+   running their functions directly.  See [Example 5](#example-5).
 
 ## Forms of input
 
 If we run a turtle shell (whether within an associated `TurtleApp`, or
 in text mode), then then commands of the turtle graphics language can
-be typed into a command shell ([Example 1](###example-1) and
-[Example 2](###example-2), below), or can be loaded from a file whose
-name is passed as input ([Example 3](###example-3) and
-[Example 4](###example-4)).
+be typed into a command shell ([Example 1](#example-1) and
+[Example 2](#example-2), below), or can be loaded from a file whose
+name is passed as input ([Example 3](#example-3) and
+[Example 4](#example-4)).
 
 Otherwise, commands are passed using functions within the `Turtle` objects,
-as in [Example 5](###example-5).
+as in [Example 5](#example-5).
 
 ## Examples
 
@@ -194,10 +194,10 @@ where:
 
   - x, for `move`, must be castable to a `float` (so it can be negative or 0)
   - x, for `left` and `right`, must be castable to a `float` in [0,360)
-  - c must be one of `['azure', 'beige', 'black', 'blue', 'brown',
-                      'chartreuse', 'chocolate', 'coral', 'cyan',
-                      'firebrick', 'gainsboro', 'gold', 'gray','green',
-                      'indigo', 'lavender', 'lime', 'magenta',
-                      'maroon', 'olive', 'orange', 'pink', 'plum',
-                      'purple', 'red', 'salmon', 'tan', 'thistle',
-                      'tomato', 'violet', 'white', 'yellow']`
+  - c must be one of `azure`, `beige`, `black`, `blue`, `brown`,
+    `chartreuse`, `chocolate`, `coral`, `cyan`,
+    `firebrick`, `gainsboro`, `gold`, `gray`,`green`,
+    `indigo`, `lavender`, `lime`, `magenta`,
+    `maroon`, `olive`, `orange`, `pink`, `plum`,
+    `purple`, `red`, `salmon`, `tan`, `thistle`,
+    `tomato`, `violet`, `white`, `yellow`
