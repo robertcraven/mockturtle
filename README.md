@@ -1,8 +1,8 @@
 # mockturtle
+
 Simple python interpreter for a subset of the turtle graphics language.
 
-AUTHOR: Robert Craven  
-EMAIL:  robert.craven@gmail.com
+Robert Craven, robert.craven@gmail.com
 
 ## Usage
 
