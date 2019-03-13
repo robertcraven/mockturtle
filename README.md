@@ -4,22 +4,22 @@ Simple python interpreter for a subset of the turtle graphics language.
 AUTHOR: Robert Craven  
 EMAIL:  robert.craven@gmail.com
 
-## USAGE
+## Usage
 
 Doing a `mockturtle.py -h` will show usage.
 
-## MODES OF RUNNING
+## Modes of running
 
 Three modes of running are supported.
 
  - The principal way is by executing this script: this shows a gui.
-   See EXAMPLE 1 and EXAMPLE 3, below.
+   See [Example 1](###example1) and [Example 3](###example3), below.
  - The first text-based method is by running the TurtleShell after importing
    this file as a module.  See EXAMPLE 2 and EXAMPLE 4.
  - Alternatively, one can import the module and create Turtle objects,
    running their functions directly.  See EXAMPLE 5.
 
-## FORMS OF INPUT
+## Forms of input
 
 If we run a turtle shell (whether within an associated TurtleApp, or
 in text mode), then then commands of the turtle graphics language can
@@ -29,9 +29,9 @@ loaded from a file whose name is passed as input (EXAMPLES 3 and 4).
 Otherwise, commands are passed using functions within the `Turtle` objects,
 as in EXAMPLE 5.
 
-## EXAMPLES
+## Examples
 
-### EXAMPLE 1
+### Example 1
 
 This draws a line from the center to 100 units north, s l o w l y.
 
@@ -87,7 +87,7 @@ Show the effects of a 'red square' program, text-based `TurtleShell`.
         drew from (-50.00, 0.00) to (-0.00, 0.00)
      t: bye
     >>> quit()
-  %
+    %
 
 ### EXAMPLE 5
 
