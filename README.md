@@ -1,18 +1,21 @@
 # mockturtle
 
-Simple python interpreter for a subset of the turtle graphics language.
-
-The program runs on python (> 3.6) and has been tested on Ubuntu Linux 18.04.
-(It has not been written to run on Macs or Windows.  Indeed, for the former
-the issue mentioned
-[here](https://stackoverflow.com/questions/15817554/obscure-repeatable-crashes-in-multi-threaded-python-console-application-using-t)
-appears to arise.)
+Simple python interpreter for a subset of the turtle graphics
+language.
 
 Robert Craven, robert.craven@gmail.com
 
 ## Usage
 
 Doing a `mockturtle.py -h` will show usage.
+
+## Platform
+
+The program runs on python (> 3.6) and has been tested on Ubuntu Linux 18.04.
+(It has not been written to run on Macs or Windows.  Indeed, for the former
+the issue mentioned
+[here](https://stackoverflow.com/questions/15817554/obscure-repeatable-crashes-in-multi-threaded-python-console-application-using-t)
+has been observed to arise.)
 
 ## Modes of running
 
