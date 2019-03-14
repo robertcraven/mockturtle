@@ -3,15 +3,45 @@
 Simple python interpreter for a subset of the turtle graphics
 language.
 
-## Usage
+## Table of Contents
 
-Doing a `mockturtle.py -h` will show usage.
+ - [Command-line usage and help](#command-line-usage-and-help)
+ - [Platform](#platform)
+ - [Modes of running](#modes-of-running)
+ - [Forms of input](#forms-of-input)
+ - [Examples](#examples)
+ - [Program structure](#program-structure)
+ - [Main classes and functions](#main-classes-and-functions)
+ - [Shutting down](#shutting-down)
+ - [Subset of the turtle language](#subset-of-the-turtle-language)
+
+## Command-line usage and help
+
+Doing a `mockturtle.py -h` from the command line will show command-line usage:
+
+    usage: turtle graphics interpreter [-h] [-x WX] [-y WY] [-p TURTLE_PROGRAM]
+                                       [-s {0..25}] [-d DELAY]
+     
+    optional arguments:
+      -h, --help            show this help message and exit
+      -x WX, --wx WX        width of window
+      -y WY, --wy WY        height of window
+      -p TURTLE_PROGRAM, --turtle_program TURTLE_PROGRAM
+                            filename of turtle program to execute
+      -s {0..25}, --speed {0..25}
+                            speed of turtles
+      -d DELAY, --delay DELAY
+                            delay (ms) between drawing line segments
+
+From within the interpreter, since it subclasses `cmd.Cmd`, you can enter
+`?` to receive help, or `help X` to receive help on a specific command `X`,
+e.g., `help move`.
 
 ## Platform
 
-The program runs on python (> 3.6) and has been tested on Ubuntu Linux 18.04.
-(It has not been written to run on Macs or Windows.  Indeed, for the former
-the issue mentioned
+The program is written in python (> 3.6) and has been tested on Ubuntu Linux
+18.04.  (It has not been written to run on Macs or Windows.  Indeed, for the
+former the issue mentioned
 [here](https://stackoverflow.com/questions/15817554/obscure-repeatable-crashes-in-multi-threaded-python-console-application-using-t)
 has been observed to arise.)
 
@@ -51,6 +81,11 @@ This draws a line from the center to 100 units north, s l o w l y.
      t: bye  
     % 
 
+The `-s 1` sets the speed of the turtles to be slow; and the `-d 100` also
+contributes to the speed setting by setting a delay of 100ms between segments
+of a line drawn.   (See [Program structure](#program-structure) for more
+details.)
+
 ### Example 2
 
 Text-based use of the `TurtleShell`.
@@ -73,6 +108,10 @@ Text-based use of the `TurtleShell`.
     >>> quit()  
     %
 
+Here the program is imported as a module named as `mt`.  We then run the 
+command interpreter by first creating a `TurtleShell`, and then starting
+the command interpreter's loop with `cmdloop()`.
+
 ### Example 3
 
 This draws a sample file quickly (not instantaneously).
@@ -80,6 +119,12 @@ This draws a sample file quickly (not instantaneously).
     % ./mockturtle.py -s 20 -d 10 -p ../turtle_programs/squares.tt
      t: bye
     %
+
+The speed settings (`-s 20`, `-d 10`) are much quicker than for
+[Example 1](#example-1).  We read a program from a file (using `-p`),
+and the interpreter executes the commands.  When done, the interpreter
+allows us to enter any new commands at a prompt (` t: `).  We exit
+using `bye`.
 
 ### Example 4
 
@@ -99,6 +144,8 @@ Show the effects of a 'red square' program, text-based `TurtleShell`.
     >>> quit()
     %
 
+This is similar to [Example 2](#example-2), except we read from a file.
+
 ### Example 5
 
 Text-based turtle drawing without the interpreter.
@@ -116,6 +163,10 @@ Text-based turtle drawing without the interpreter.
         drew from (0.00, 0.00) to (-76.60, 64.28)
     >>> quit()
     %
+
+Here the `mockturtle` module is imported, but we do not start the command
+interpreter.  Instead, we create `Turtle` objects and run their functions
+directly.
 
 ## Program structure
 
