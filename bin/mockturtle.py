@@ -681,7 +681,7 @@ class Turtle:
         return f'mockturtle.Turtle object: {str(self)}'
 
 
-    def left(self, dtheta:int):
+    def left(self, dtheta:float):
         """Rotate the turtle anti-clockwise by dtheta degrees."""
         if self.app:
             self.theta = (self.theta - dtheta) % 360
@@ -720,7 +720,7 @@ class Turtle:
             self.pen_down = True
 
 
-    def right(self, dtheta:int):
+    def right(self, dtheta:float):
         """Rotate the turtle clockwise by dtheta degrees."""
         if self.app:
             self.theta = (self.theta + dtheta) % 360
